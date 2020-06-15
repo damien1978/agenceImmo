@@ -3,6 +3,3 @@
 #    controller: App\Controller\DefaultController::index
 
 
-index:
-    path: /
-    controller: App\Controller\HomeController::index

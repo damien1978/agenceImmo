@@ -15,7 +15,8 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         return $this->render("home/index.html.twig", [
-            "title" => "Index Page"
+            "title" => "Index Page",
+            "current_menu" => "Index"
         ]);
     }
     /**
@@ -23,7 +24,9 @@ class HomeController extends AbstractController
      */
     public function home(): Response
     {
-        return $this->render("home/home.html.twig");
+        return $this->render("home/home.html.twig",[
+            "current_menu" =>"home"
+        ]);
 
     }
 

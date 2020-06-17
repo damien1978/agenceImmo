@@ -38,7 +38,7 @@ class Property
     private $room;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $floor;
 
@@ -48,7 +48,7 @@ class Property
     private $price;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default"=false})
      */
     private $sold;
 

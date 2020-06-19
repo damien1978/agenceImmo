@@ -22,6 +22,11 @@ class PropertyController extends AbstractController
                 ->setSurface(80)
                 ->setPrice(95000);
                 
+        $em=$this->getDoctrine()->getManager();
+        $em->persist($property);
+        $em->flush();
+
+        return $this->render("property/index.html.twig");
     }
 
 }

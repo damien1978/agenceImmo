@@ -13,20 +13,29 @@ class PropertyController extends AbstractController
      */
     public function index()
     {
-        $property= new Property();
+        $repository = $this->getDoctrine()->getRepository(Property::class);
 
-        $property->setName("mon premier bien")
-                ->setDescription ("super appart à vendre")
-                ->setFloor(4)
-                ->setRoom(2)
-                ->setSurface(80)
-                ->setPrice(95000);
-                
-        $em=$this->getDoctrine()->getManager();
-        $em->persist($property);
-        $em->flush();
+       $properties =  $repository->findAllVisible();
 
-        return $this->render("property/index.html.twig");
+        
+
+        return $this->render("property/index.html.twig",[
+            "properties"=>$properties
+        ]);
     }
 
 }
+
+
+// $property= new Property();
+
+//         $property->setName("mon premier bien")
+//                 ->setDescription ("super appart à vendre")
+//                 ->setFloor(4)
+//                 ->setRoom(2)
+//                 ->setSurface(80)
+//                 ->setPrice(95000);
+                
+//         $em=$this->getDoctrine()->getManager();
+//         $em->persist($property);
+//         $em->flush();

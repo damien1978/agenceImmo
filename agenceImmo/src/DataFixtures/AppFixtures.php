@@ -6,7 +6,7 @@ use App\Entity\Property;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
-use facker\Factory;
+use Faker\Factory;
 
 class AppFixtures extends Fixture
 {

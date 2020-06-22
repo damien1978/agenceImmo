@@ -15,12 +15,13 @@ class PropertyController extends AbstractController
     {
         $repository = $this->getDoctrine()->getRepository(Property::class);
 
-       $properties =  $repository->findAllVisible();
+       $property =  $repository->findAllVisible();
 
         
 
         return $this->render("property/index.html.twig",[
-            "properties"=>$properties
+            
+            "property"=>$property
         ]);
     }
 

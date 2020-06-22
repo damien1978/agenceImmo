@@ -2,16 +2,34 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Property;
+
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use facker\Factory;
 
 class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
-    {
-        // $product = new Product();
-        // $manager->persist($product);
+    {             
+        $faker = Factory::create('fr_FR');
 
-        $manager->flush();
+            for($i = 0; $i <= 25; $i++){
+        
+                $property = new property();
+
+                $property
+                    ->setName($faker->name())
+                    ->setDescription($faker->text(200))
+                    ->setSurface($faker->numberBetween(80, 300))
+                    ->setRoom($faker->numberBetween(1, 5))
+                    ->setFloor($faker->numberBetween(80000, 95000))
+                    ->setAddress($faker->streetAddress())
+                    ->setCity($faker->city())
+                    ->setPostalCode($faker->postcode());
+
+                $manager->persist($property);
+            }
+            $manager->flush();
     }
 }

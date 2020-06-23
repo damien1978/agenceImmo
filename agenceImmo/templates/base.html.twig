@@ -15,18 +15,21 @@
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-		<a class="navbar-brand" href="{{ path('home') }}">Mon Agence</a>
+		<a class="navbar-brand" href="{{ path('index') }}">Mon Agence</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item {% if current_menu is defined and current_menu == 'index' %} active {% endif %}">
-					<a class="nav-link" href="{{ path('index') }}">Accueil</a>
+				<li class="nav-item {% if current_menu is defined and current_menu == 'home' %} active {% endif %}">
+					<a class="nav-link" href="{{ path('home') }}">Accueil</a>
 				</li>
 				<li class="nav-item {% if current_menu is defined and current_menu == 'buy' %} active {% endif %}">
 					<a class="nav-link" href="{{ path('property_index') }}">Acheter</a>
+				</li>
+				<li class="nav-item {% if current_menu is defined and current_menu == 'admin' %} active {% endif %}">
+					<a class="nav-link" href="{{ path('admin_property_index') }}">Admin</a>
 				</li>
 			</ul>
 			

@@ -44,7 +44,7 @@ class Property
     private $floor;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=false)
      */
     private $price;
 

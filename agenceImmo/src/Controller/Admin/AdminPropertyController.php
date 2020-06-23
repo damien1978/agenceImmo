@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Property;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -13,8 +14,14 @@ class AdminPropertyController extends AbstractController
      */
     public function index()
     {
+
+        $repository = $this->getDoctrine()->getRepository(property::class);
+        $properties = $repository->findAll();
+
+        
         return $this -> render("admin/property/index.html.twig",[
-        "current_menu"=>"admin"
+        "current_menu"=>"admin",
+        "properties" => $properties
     
     ]);
     }

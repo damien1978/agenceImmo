@@ -7,5 +7,28 @@
 
     <h2> Administration des Biens </h2>
 
+<div class="container">
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>DATE</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for property in properties %}
+                <tr>
+                    <td>{{ property.id }}</td>
+                    <td>{{ property.name }}</td>
+                    <td>{{ property.createdAt | format_datetime()}}</td>
+                    <td></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
 
 {% endblock %}

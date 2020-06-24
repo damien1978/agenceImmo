@@ -12,7 +12,7 @@ class PropertyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('sold') 
+            ->add('sold') 
             ->add('name')
             ->add('description')
             ->add('surface')
@@ -21,7 +21,7 @@ class PropertyType extends AbstractType
             ->add('price')
             ->add('address')
             ->add('city')
-            ->add('postal_code')
+            ->add('postalCode')
         ;
     }
 

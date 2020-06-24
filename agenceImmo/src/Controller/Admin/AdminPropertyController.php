@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Property;
+use App\Form\PropertyType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -24,6 +25,17 @@ class AdminPropertyController extends AbstractController
         "properties" => $properties
     
     ]);
+    }
+    /**
+     * @Route("/admin/create", name="admin_property_create")
+     */
+    public function create()
+    {
+      $form = $this->createForm(PropertyType::class);
+
+        return $this->render("admin/property/create.html.twig", [
+            "form" => $form->createView()
+        ]);
     }
 
 }
